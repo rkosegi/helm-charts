@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  generic-prometheus-exporter:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-01-20T06:43:25.531801514Z"
+    description: Generic Prometheus exporter chart
+    digest: 51124ad92b1c047f3a93646717cd671eeb41b63179df5e0afb3d80ca7958d2af
+    maintainers:
+    - email: richard.kosegi@gmail.com
+      name: Richard Kosegi
+    name: generic-prometheus-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/generic-prometheus-exporter-1.0.0/generic-prometheus-exporter-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-01-20T06:43:25.531806514Z"
