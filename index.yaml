@@ -1,5 +1,19 @@
 apiVersion: v1
 entries:
+  cert-manager-webhook-active24:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2023-01-21T05:51:12.6388266Z"
+    description: Allow cert-manager to solve DNS challenges using Active24 DNS API
+    digest: 799a343aa96e674e239e253b820fbaee72e74fc4e2c8d6582d8df3ae6a2fd1c8
+    maintainers:
+    - email: richard.kosegi@gmail.com
+      name: Richard Kosegi
+    name: cert-manager-webhook-active24
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/cert-manager-webhook-active24-1.0.0/cert-manager-webhook-active24-1.0.0.tgz
+    version: 1.0.0
   generic-prometheus-exporter:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -14,4 +28,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/generic-prometheus-exporter-1.0.0/generic-prometheus-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-20T06:43:25.531806514Z"
+generated: "2023-01-21T05:51:12.638834801Z"
