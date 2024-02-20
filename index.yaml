@@ -30,6 +30,19 @@ entries:
     version: 1.0.0
   owm-exporter:
   - apiVersion: v2
+    appVersion: 1.0.4
+    created: "2024-02-20T19:53:18.440146102Z"
+    description: An OpenWeatherMap Prometheus exporter chart
+    digest: 21d40d28453b5631b70f1613380566a9c85621e1bfa5c7f2b1c90d4ce51882e6
+    maintainers:
+    - email: richard.kosegi@gmail.com
+      name: Richard Kosegi
+    name: owm-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/owm-exporter-1.0.4/owm-exporter-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
     appVersion: 1.0.3
     created: "2023-01-21T06:40:05.592517612Z"
     description: An OpenWeatherMap Prometheus exporter chart
@@ -42,4 +55,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/owm-exporter-1.0.3/owm-exporter-1.0.3.tgz
     version: 1.0.3
-generated: "2023-01-21T06:40:05.592522711Z"
+generated: "2024-02-20T19:53:18.440160509Z"
