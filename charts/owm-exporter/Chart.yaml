@@ -1,0 +1,10 @@
+---
+apiVersion: v2
+name: owm-exporter
+description: An OpenWeatherMap Prometheus exporter chart
+version: 1.0.4
+appVersion: 1.0.4
+type: application
+maintainers:
+  - name: Richard Kosegi
+    email: richard.kosegi@gmail.com
