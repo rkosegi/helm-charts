@@ -55,4 +55,15 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/owm-exporter-1.0.3/owm-exporter-1.0.3.tgz
     version: 1.0.3
-generated: "2024-02-20T19:53:18.440160509Z"
+  tuya-smartplug-exporter:
+  - apiVersion: v2
+    appVersion: v1.0.0
+    created: "2024-02-25T09:03:03.926404096Z"
+    description: A Helm chart for Tuya smartplug prometheus exporter
+    digest: 04ea6d32a7802018d4e7149f6bebd06956300161d2e31795e4e1fbf76bcfaa2a
+    name: tuya-smartplug-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.0/tuya-smartplug-exporter-1.0.0.tgz
+    version: 1.0.0
+generated: "2024-02-25T09:03:03.926436396Z"
