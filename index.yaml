@@ -28,6 +28,17 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/generic-prometheus-exporter-1.0.0/generic-prometheus-exporter-1.0.0.tgz
     version: 1.0.0
+  open-meteo-exporter:
+  - apiVersion: v2
+    appVersion: v1.0.4
+    created: "2024-03-05T17:58:14.334302067Z"
+    description: A Helm chart for Prometheus exporter for open-meteo.com.
+    digest: ee10057a8317ace5d09b790e0d88f340733ca9cf205c94b85a7d5a38cb081d52
+    name: open-meteo-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/open-meteo-exporter-1.0.4/open-meteo-exporter-1.0.4.tgz
+    version: 1.0.4
   owm-exporter:
   - apiVersion: v2
     appVersion: 1.0.4
@@ -76,4 +87,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.0/tuya-smartplug-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2024-02-25T09:21:15.153484823Z"
+generated: "2024-03-05T17:58:14.33431454Z"
