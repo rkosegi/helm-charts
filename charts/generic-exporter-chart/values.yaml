@@ -1,0 +1,88 @@
+# Copyright 2024 Richard Kosegi
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+# Number of replicas
+replicaCount: 1
+
+image:
+  name: "" # Container image name and version
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+serviceMonitor:
+  enabled: true  # Whether servicemonitor resource should be installed
+  scrape_config: # scrape configuration
+    - port: metrics
+      interval: 30s
+podAnnotations: {}
+podSecurityContext: {}
+
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+# runAsUser: 1000
+
+service:
+  # Type of service
+  type: ClusterIP
+  # Service port
+  port: 80
+# Container port
+port: 9000
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+probe:
+  enabled: true
+  path: /healthz
+nodeSelector: {}
+tolerations: []
+affinity: {}
+config: {}
+extraMounts: # extra mount points to use in pod
+#  - path: /data
+#    name: data
+#    sub: file.txt
+extraVolumes: # extra volumes to use in pod
+#  - name: config
+#    secret:
+#      secretName: config
+extraObjects: [] # extra objects to create
+#  - apiVersion: v1
+#    kind: Secret
+#    metadata:
+#      name: config
+#    stringData:
+#      config.yaml: some data
+# exporter entry point
+command: [] # container command
+arguments: [] # additional arguments
