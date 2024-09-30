@@ -122,6 +122,16 @@ entries:
     version: 1.0.3
   tuya-smartplug-exporter:
   - apiVersion: v2
+    appVersion: v1.0.4
+    created: "2024-09-30T15:24:15.914252689Z"
+    description: A Helm chart for Tuya smartplug prometheus exporter
+    digest: 85d96ff7e8c118fbcffba314349aa715a5fc4bda8a16c6705d4719c6ce8dee40
+    name: tuya-smartplug-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.4/tuya-smartplug-exporter-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
     appVersion: v1.0.3
     created: "2024-05-21T07:32:34.321789854Z"
     description: A Helm chart for Tuya smartplug prometheus exporter
@@ -161,4 +171,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.0/tuya-smartplug-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2024-07-14T05:06:50.169083301Z"
+generated: "2024-09-30T15:24:15.91444062Z"
