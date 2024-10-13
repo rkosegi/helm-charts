@@ -95,6 +95,19 @@ entries:
     version: 1.0.4
   owm-exporter:
   - apiVersion: v2
+    appVersion: 1.0.5
+    created: "2024-10-13T12:45:13.626382363Z"
+    description: An OpenWeatherMap Prometheus exporter chart
+    digest: 1a324b0d1f148e80663f495d181e758c2819dcc2c6664d958e1e1fc1189d9d08
+    maintainers:
+    - email: richard.kosegi@gmail.com
+      name: Richard Kosegi
+    name: owm-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/owm-exporter-1.0.5/owm-exporter-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
     appVersion: 1.0.4
     created: "2024-02-20T19:53:18.440146102Z"
     description: An OpenWeatherMap Prometheus exporter chart
@@ -171,4 +184,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.0/tuya-smartplug-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2024-09-30T15:24:15.91444062Z"
+generated: "2024-10-13T12:45:13.626413802Z"
