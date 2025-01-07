@@ -43,6 +43,16 @@ entries:
     version: 1.0.0
   k8s-footprint-exporter:
   - apiVersion: v2
+    appVersion: v0.0.7
+    created: "2025-01-07T07:23:46.074495866Z"
+    description: A Prometheus exporter for K8s API resources footprint.
+    digest: ddf0700efd22270d7078dcae58c7d98689b7f7a30f3a55440bee6674d9fbd66f
+    name: k8s-footprint-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/k8s-footprint-exporter-0.0.7/k8s-footprint-exporter-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
     appVersion: v0.0.6
     created: "2024-11-25T16:24:16.956529814Z"
     description: A Prometheus exporter for K8s API resources footprint.
@@ -194,4 +204,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.0/tuya-smartplug-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2024-11-25T16:24:16.956567434Z"
+generated: "2025-01-07T07:23:46.07453521Z"
