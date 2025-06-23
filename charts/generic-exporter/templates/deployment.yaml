@@ -1,0 +1,125 @@
+# Copyright 2024 Richard Kosegi
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "generic-exporter.fullname" . }}
+  labels:
+    {{- include "generic-exporter.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "generic-exporter.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "generic-exporter.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "generic-exporter.serviceAccountName" . }}
+      {{- with .Values.podSecurityContext }}
+      securityContext:
+        {{- tpl (toYaml .) $ | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          {{- with .Values.podSecurityContext }}
+          securityContext:
+            {{- tpl (toYaml .) $ | nindent 12 }}
+          {{- end }}
+          image: {{ required "Image repository is required" .Values.image.name }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.command  }}
+          command:
+            {{- range . }}
+            - {{ . | quote }}
+            {{- end }}
+          {{- end }}
+          {{- with .Values.arguments }}
+          args:
+            {{- range . }}
+            - {{ . | quote }}
+            {{- end }}
+          {{- end }}
+          ports:
+            - name: {{ .Values.service.targetPort }}
+              containerPort: {{ .Values.containerPort }}
+              protocol: TCP
+          {{- if .Values.probe.enabled  }}
+          startupProbe:
+            httpGet:
+              path: {{ .Values.probe.path }}
+              port: {{ .Values.containerPort }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.probe.path }}
+              port: {{ .Values.containerPort }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.probe.path }}
+              port: {{ .Values.containerPort}}
+          {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- $allMounts := list }}
+          {{- if .Values.config.enabled }}
+          {{-   $allMounts = append $allMounts (dict "name" "config" "mountPath" .Values.config.mountPath "readOnly" true)}}
+          {{- end }}
+          {{- if .Values.extraVolumes }}
+          {{-   $allMounts = concat $allMounts .Values.extraMounts }}
+          {{- end }}
+          {{- with $allMounts }}
+          volumeMounts:
+            {{- tpl (toYaml $allMounts) $ | nindent 12}}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- $allVolumes := list }}
+      {{- if .Values.config.enabled }}
+      {{-   $ckind := "configMap" }}
+      {{-   $cnameEl := "name" }}
+      {{-   if .Values.config.confidential }}
+      {{-     $ckind = "secret" }}
+      {{-     $cnameEl = "secretName" }}
+      {{-   end }}
+      {{-   $cname := ( printf "%s-config" (include "generic-exporter.fullname" .) ) }}
+      {{-   $cfgVolume := dict "name" "config" $ckind (dict $cnameEl $cname) }}
+      {{-   $allVolumes = append $allVolumes $cfgVolume }}
+      {{- end }}
+      {{- if .Values.extraVolumes }}
+      {{-   $allVolumes = concat $allVolumes .Values.extraVolumes }}
+      {{- end }}
+      {{- with $allVolumes }}
+      volumes:
+        {{- tpl (toYaml .) $ | nindent 8 }}
+      {{- end }}
