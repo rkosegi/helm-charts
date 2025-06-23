@@ -14,6 +14,21 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/cert-manager-webhook-active24-1.0.0/cert-manager-webhook-active24-1.0.0.tgz
     version: 1.0.0
+  generic-exporter:
+  - apiVersion: v2
+    appVersion: v1.0.3
+    created: "2025-06-23T06:24:40.402283211Z"
+    description: Generic Prometheus exporter chart
+    digest: 40a8846c8f9d9d18dbe671a49ad5b2bdb78997b98c8c1a8b23d6414c6dbd218b
+    maintainers:
+    - email: richard.kosegi@gmail.com
+      name: Richard Kosegi
+      url: https://github.com/rkosegi
+    name: generic-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/generic-exporter-1.0.3/generic-exporter-1.0.3.tgz
+    version: 1.0.3
   generic-prometheus-exporter:
   - apiVersion: v2
     appVersion: v1.0.2
@@ -204,4 +219,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.0/tuya-smartplug-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2025-01-07T07:23:46.07453521Z"
+generated: "2025-06-23T06:24:40.402311454Z"
