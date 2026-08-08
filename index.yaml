@@ -16,6 +16,20 @@ entries:
     version: 1.0.0
   generic-exporter:
   - apiVersion: v2
+    appVersion: v1.0.4
+    created: "2026-08-08T06:21:06.848498216Z"
+    description: Generic Prometheus exporter chart
+    digest: 6bc0243545aa8436b178636c560e69ee4d24cf301c6ee20ed859d6e0648447bc
+    maintainers:
+    - email: richard.kosegi@gmail.com
+      name: Richard Kosegi
+      url: https://github.com/rkosegi
+    name: generic-exporter
+    type: application
+    urls:
+    - https://github.com/rkosegi/helm-charts/releases/download/generic-exporter-1.0.4/generic-exporter-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
     appVersion: v1.0.3
     created: "2025-06-23T06:24:40.402283211Z"
     description: Generic Prometheus exporter chart
@@ -219,4 +233,4 @@ entries:
     urls:
     - https://github.com/rkosegi/helm-charts/releases/download/tuya-smartplug-exporter-1.0.0/tuya-smartplug-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2025-06-23T06:24:40.402311454Z"
+generated: "2026-08-08T06:21:06.848536839Z"
